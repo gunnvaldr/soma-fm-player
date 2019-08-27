@@ -9,6 +9,7 @@ import _audio from './js/audio';
 import _scene from './js/scene';
 import _utils from './js/utils';
 import _store from './js/store';
+import _art from './js/art';
 
 // main vue app
 new Vue({
@@ -316,6 +317,13 @@ new Vue({
         this.songs = songs.slice( 0, 3 );
         this.setError( 'songs', '' );
       });
+      _art.getArt(this.track.album, ( err, art ) => {
+        if ( err ) return this.setError( 'art', err );
+        if ( typeof cb === 'function' ) cb( art );
+        this.track.art = art || channel.largeimage; 
+        // console.log(this.track.art);
+        this.setError( 'art', '' );
+      })
     },
 
     // checks is a channel is currently selected

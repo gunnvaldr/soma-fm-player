@@ -99,6 +99,7 @@
 
                   <!-- current track -->
                   <div class="card push-bottom fx fx-slide-up fx-delay-4" :key="track.date">
+                    <div><span class="album-art-container"><img :src="track.art" class="album-art"></span></div>
                     <div><span class="text-secondary">{{ track.title | toText( 'N/A' ) }}</span></div>
                     <div><span class="text-faded">From:</span> <span class="text-bright">{{ track.album | toText( 'N/A' ) }}</span></div>
                     <div><span class="text-faded">By:</span> <span class="text-default">{{ track.artist | toText( 'N/A' ) }}</span></div>
