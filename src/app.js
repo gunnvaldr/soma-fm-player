@@ -20,7 +20,7 @@ new Vue({
     playing: false,
     loading: false,
     sidebar: false,
-    volume: 0.5,
+    volume: 0.25,
     // channels stuff
     channels: [],
     channel: {},
